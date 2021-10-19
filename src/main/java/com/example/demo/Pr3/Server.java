@@ -55,6 +55,7 @@ class ServerFunction extends Thread {
                         Server.messages.add(word);
                         System.out.println("New message: " + word);
                         Thread.sleep(5000);
+                        // Отсылка каждому пользователю обратно
                         for (ServerFunction vr : Server.serverList) {
                             vr.send(Server.messages);
                         }
